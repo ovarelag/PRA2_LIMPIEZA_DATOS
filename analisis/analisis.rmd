@@ -1,0 +1,89 @@
+---
+title: "PRACTICA 2 - LIMPIEZA Y VALIDACION DE DATOS"
+author: "Óscar Varela García"
+date: "7 de enero de 2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Preguntas:
+
+##1.  Descripción del dataset. ¿Por qué es importante y qué pregunta/problema pretende responder?
+
+El data set es importante porque contiene información y reviews de usuarios acerca de 10.000 aplicaciones publicadas en el Android market. Servirá para ver que aplicaciones tienen mayor interés para el público y cuales osn las mejor valoradas.
+
+A pesar de esto, en el Android market existen publicadas más de 3M de aplicaciones, por lo que 10.000 individuos podría no ser una muestra significativa en relación a la población.
+
+Vamos a analizar el data set para ver sus características. El data set esta compuesto por estos atributos:
+
+- App : Nombre de la aplicación
+- Category : Categoría de la aplicación
+- Rating : Puntuación media de la aplicación
+- Reviews : Número de reviews de la aplicación en la playstore
+- Size : Tamaño de la aplicación en MB
+- Installs : Número de descargas
+- Type : Indica si la aplicación es gratuita o de pago.
+- Price : Precio
+- Rating - Age Limitations for the App Genres
+- Sub-Division of Category Last.Updated - When was the App last - Updated Current.Ver - Version of the App
+- Android.Ver - Compatibility with Android Versions
+
+##2 Integración y selección de los datos de interés a analizar.
+
+Queremos obtener información acerca de:
+- Las Aplicaciones mejor valoradas en base a valoraciónn de usuarios.
+- Las Categorías de aplicaciones con mayor número de aplicaciones.
+- Las Aplicaciones poco populares con buenas valoraciones.
+- Aplicaciones que merezcan inversion de dinero.
+
+
+##3. Limpieza de los datos.
+
+#3.1.  ¿Los datos contienen ceros o elementos vacíos? ¿Cómo gestionarías cada uno de estos casos?
+
+#3.2.  Identificación y tratamiento de valores extremos.
+
+
+##4.  Análisis de los datos.
+
+#4.1.  Selección de los grupos de datos que se quieren analizar/comparar (planificación de los análisis a aplicar).
+
+#4.2.  Comprobación de la normalidad y homogeneidad de la varianza.
+
+#4.3.  Aplicación de pruebas estadísticas para comparar los grupos de datos. En función de los datos y el objetivo del estudio, aplicar pruebas de contraste de hipótesis, correlaciones, regresiones, etc.
+
+##5.  Representación de los resultados a partir de tablas y gráficas.
+
+##6.  Resolución del problema. A partir de los resultados obtenidos, ¿cuáles son las conclusiones? ¿Los resultados permiten responder al problema?
+
+
+
+
+```{r cars}
+##Cargamos librerias a utilizar para analisis exploraotrio del data set:
+library(ggplot2)
+library(stringr)
+library(plyr)
+library(tidyverse) 
+
+
+list.files(path = "../input")
+
+
+#Cargamos el data set.
+data_path <- "~/git/PRA2_LIMPIEZA_DATOS/data/IN_googleplaystore.csv"
+googleplaystore = read.csv(data_path)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+
